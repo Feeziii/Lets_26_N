@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1b0b20" />
+  <meta name="description" content="A romantic interactive birthday surprise." />
+  <title>For Special Person —  birthday</title>
+  <link rel="preload" as="image" href="assets/panda-clean.webp?v=6" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20261101-panda-sync" />
+</head>
+<body>
+  <main class="app" id="app" aria-live="polite">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="ambient ambient--1" aria-hidden="true"></div>
+    <div class="ambient ambient--2" aria-hidden="true"></div>
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <div class="global-decor" aria-hidden="true">
+      <span class="floating-heart heart-a">♡</span>
+      <span class="floating-heart heart-b">♡</span>
+      <span class="floating-heart heart-c">♡</span>
+      <span class="floating-spark spark-a">✦</span>
+      <span class="floating-spark spark-b">✧</span>
+      <span class="floating-spark spark-c">✦</span>
+    </div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <section class="scene scene--active" data-scene="0" aria-label="Intro">
+      <div class="floral-bloom" aria-hidden="true">
+        <span class="flower f1">✿</span><span class="flower f2">✿</span><span class="flower f3">✿</span>
+        <span class="flower f4">✿</span><span class="flower f5">✿</span><span class="flower f6">✿</span>
+        <span class="flower f7">✿</span><span class="flower f8">✿</span><span class="flower f9">✿</span>
+        <span class="flower f10">✿</span><span class="flower f11">✿</span><span class="flower f12">✿</span>
+        <span class="leaf leaf-a">❧</span><span class="leaf leaf-b">❧</span><span class="leaf leaf-c">❧</span>
+        <span class="leaf leaf-d">❧</span>
+      </div>
+      <div class="scene-copy scene-copy--intro">
+        <p class="eyebrow">a little something, for you</p>
+        <div class="panda-wrap">
+          <img class="panda-animation panda-animation--sync-pending" src="assets/panda-clean.webp?v=6" data-animation-src="assets/panda-clean.webp?v=6" alt="Cute panda animation" width="400" height="572" decoding="async" fetchpriority="high" />
+        </div>
+        <button class="panda-sound-btn" id="pandaSoundBtn" type="button" aria-label="Hear the panda message"><span aria-hidden="true">♫</span> hear panda</button>
+        <p class="gesture">pull &amp; release</p>
+        <button class="ghost-btn" data-next><span class="cta-label">open my little surprise</span><span class="cta-arrow" aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+
+    <section class="scene scene--hero" data-scene="1" aria-label="Birthday greeting">
+      <div class="paper-wash"></div>
+      <div class="heart-tree" aria-hidden="true">
+        <div class="tree-trunk"></div>
+        <div class="heart-canopy"></div>
+        <span class="heart-float hf1">♥</span><span class="heart-float hf2">♥</span>
+        <span class="heart-float hf3">♥</span><span class="heart-float hf4">♥</span>
+        <span class="heart-float hf5">♥</span><span class="heart-float hf6">♥</span>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">it’s officially your day</p>
+        <h1>✨Happy Birthday✨,<br /><em> 🍾 Nithya AI 🍰 </em></h1>
+        <p>and just like that, you’re turning 23 🍷 <span aria-hidden="true">✦</span></p>
+      </div>
+      <button class="round-next" data-next aria-label="Next">↓</button>
+    </section>
+
+    <section class="scene scene--cake" data-scene="2" aria-label="Birthday cake">
+      <div class="cake-garland" aria-hidden="true"><span>✦</span><i></i><span>✦</span><i></i><span>♡</span><i></i><span>✦</span><i></i><span>♡</span><i></i><span>✦</span></div>
+      <div class="cake-sparkles" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span><span>•</span><span>✧</span></div>
+      <div class="cake-flight-field" id="cakeFlightField" aria-hidden="true"></div>
+      <div class="section-title">
+        <h3>First things first <span aria-hidden="true">🍰</span></h3>
+        <p>Baking something sweet…</p>
+      </div>
+      <div class="cake-stage" aria-label="A birthday cake with a candle">
+        <div class="candle-flame"></div>
+        <div class="candle"></div>
+        <div class="cake">
+          <div class="layer layer--top"></div>
+          <div class="layer layer--middle"></div>
+          <div class="layer layer--bottom"></div>
+          <div class="plate"></div>
+        </div>
+      </div>
+      <p class="cake-name" aria-label="Happiest B'day Bootham, ghost, this special day"><span class="cake-name__word">Happiest B'day Bootham 👻<small>This Spl Day</small></span></p>
+      <button class="pill-btn" data-next>looks delicious <span>→</span></button>
+    </section>
+
+    <section class="scene scene--balloons" data-scene="3" aria-label="Balloon reasons">
+      <div class="balloon-garland" aria-hidden="true"><span>•</span><span>•</span><span>✦</span><span>•</span><span>•</span><span>✦</span><span>•</span><span>•</span></div>
+      <div class="section-title section-title--compact">
+        <h2>Pop the balloons <span aria-hidden="true">🎈</span></h2>
+        <p>5 balloons. Each one holds a reason you’re loved. Pop them all <span aria-hidden="true">🎈</span></p>
+      </div>
+      <div class="balloon-field" id="balloonField">
+        <button class="balloon b1" data-reason="You Feel Nobody trust u or una imprt nenakalanu but i say alway U Spl 💧" aria-label="Pop balloon 1"><span></span></button>
+        <button class="balloon b2" data-reason="You make bad days feel lighter & Motivate 🫶" aria-label="Pop balloon 2"><span></span></button>
+        <button class="balloon b3" data-reason="You make normal days feel special😂 " aria-label="Pop balloon 3"><span></span></button>
+        <button class="balloon b4" data-reason="You always know Ur Spl frd to me  ✨" aria-label="Pop balloon 4"><span></span></button>
+        <button class="balloon b5" data-reason="You believed & Stand for me 💚" aria-label="Pop balloon 5"><span></span></button>
+        <div class="confetti-burst" id="balloonBurst"></div>
+      </div>
+      <div class="reason-card" id="reasonCard" aria-live="polite">
+        <span class="reason-tag">reason no. <b id="reasonNumber">1</b> <span aria-hidden="true">❤</span></span>
+        <p id="reasonText">You Always special for Me 👻</p>
+        <span class="spark">✦</span>
+      </div>
+      <p class="reason-count" id="reasonCount">0 / 5 popped</p>
+      <button class="pill-btn is-hidden" id="reasonsDone" data-next>you found them all <span>→</span></button>
+    </section>
+
+    <section class="scene" data-scene="4" aria-label="Reasons I love you">
+      <div class="reason-list">
+        <article class="reason-row r1"><span>reason no. 1</span><strong>You Always Special to Me & I Trust U💧</strong><i>✦</i></article>
+        <article class="reason-row r2"><span>reason no. 2</span><strong>Nee epaiyumay Enkita ego Pathathu ila🫶</strong><i>✦</i></article>
+        <article class="reason-row r3"><span>reason no. 3</span><strong>Neeya un Stress Panikatha Apo Pimple Ahthigama aadum 😂</strong><i>✦</i></article>
+        <article class="reason-row r4"><span>reason no. 4</span><strong>Nee epaiyumay Azhagu tha, una Enaku romba pudikum eruma u are god gift frd  </strong><i>✦</i></article>
+        <article class="reason-row r5"><span>reason no. 5</span><strong>Nee Siricha Matu tha Nalla erupa, yarukaga vu unoda smile stop panidatha 💚</strong><i>✦</i></article>
+      </div>
+      <p class="thousand">…and a thousand more reasons <span aria-hidden="true">💛</span></p>
+      <button class="pill-btn" data-next>keep going <span>→</span></button>
+    </section>
+
+    <section class="scene" data-scene="5" aria-label="Memory lane">
+      <div class="section-title">
+        <h2>A walk down memory lane</h2>
+        <p>swipe through <span aria-hidden="true">📸</span></p>
+      </div>
+      <div class="polaroid-stack" id="memoryDeck">
+        <article class="polaroid p1">
+          <div class="photo photo-1">
+            <img src="assets/memories/photo-1.jpeg" alt="Memory photo one" loading="lazy" decoding="async" />
+            <span>our favorite moment</span>
+          </div>
+          <p>you + me, My Friend</p>
+        </article>
+        <article class="polaroid p2">
+          <div class="photo photo-2">
+            <img src="assets/memories/photo-2.jpeg" alt="Memory photo two" loading="lazy" decoding="async" />
+            <span>the little things</span>
+          </div>
+          <p>you make life feel soft</p>
+        </article>
+        <article class="polaroid p3">
+          <div class="photo photo-3">
+            <img src="assets/memories/photo-3.jpeg" alt="Memory photo three" loading="lazy" decoding="async" />
+            <span>another favorite</span>
+          </div>
+          <p>still one of Cute</p>
+        </article>
+      </div>
+      <div class="dots" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span></div>
+      <button class="pill-btn" data-next>keep going <span>→</span></button>
+    </section>
+
+    <section class="scene" data-scene="6" aria-label="Letter teaser">
+      <div class="section-title">
+        <h2>One last thing, Nithya…</h2>
+        <p>Feeziii wrote you a letter.</p>
+      </div>
+      <button class="letter-envelope" id="openLetter" aria-label="Open the letter">
+        <span class="envelope-flap"></span>
+        <span class="wax-seal">♥</span>
+      </button>
+      <p class="gesture">tap the seal</p>
+    </section>
+
+    <section class="scene scene--letter" data-scene="7" aria-label="Personal letter">
+      <div class="letter-paper" id="letterPaper">
+        <div class="letter-header">
+          <div>Uyrie Thozha ninakkayi ezhuthunnathu.. 👻 ,</div>
+          <span>♡</span>
+        </div>
+        <div class="letter-body">
+          <p class="letter-opening">Pirannāḷ Aśamsakal! <span>♥</span> Bootham 👻</p>
+          <p id="typedLetter"></p><span class="caret" id="caret">|</span>
+        </div>
+        <div class="letter-stamp">♕</div>
+      </div>
+      <button class="pill-btn is-hidden" id="letterNext" data-next>one more thing <span>→</span></button>
+    </section>
+
+    <section class="scene scene--final" data-scene="8" aria-label="Final birthday wish">
+      <div class="final-garland" aria-hidden="true"><span>♡</span><span>✦</span><span>♡</span><span>✧</span><span>♡</span><span>✦</span><span>♡</span></div>
+      <div class="confetti-rain" aria-hidden="true"></div>
+      <div class="final-burst" aria-hidden="true"></div>
+      <div class="final-copy">
+        <p class="final-kicker">This for u Yaar</p>
+        <h2>HAPPY<br />BIRTHDAY</h2>
+        <div class="final-name">Nithya Sri !</div>
+        <p class="final-sub">Made with love, just for you — <strong>Gokul</strong> <span aria-hidden="true">💛</span></p>
+        <button class="outline-btn" id="replay">Replay the Preview <span>↻</span></button>
+      </div>
+      <aside class="final-qr" aria-label="Birthday message QR code">
+        <img src="assets/qr-code.png" alt="QR code with a birthday message" loading="lazy" decoding="async" />
+        <span>scan a little surprise</span>
+      </aside>
+       <footer>Made with ♥ on <span>Our Crazy Moments</span> — Etha pananu Thonuchii avolo tha</footer>
+    </section>
+
+    <nav class="progress" id="progress" aria-label="Preview progress">
+      <button data-index="0" aria-label="Go to intro" class="active"></button>
+      <button data-index="1" aria-label="Go to birthday greeting"></button>
+      <button data-index="2" aria-label="Go to cake"></button>
+      <button data-index="3" aria-label="Go to balloons"></button>
+      <button data-index="4" aria-label="Go to reasons"></button>
+      <button data-index="5" aria-label="Go to memories"></button>
+      <button data-index="6" aria-label="Go to letter"></button>
+      <button data-index="7" aria-label="Go to message"></button>
+      <button data-index="8" aria-label="Go to finale"></button>
+    </nav>
+
+    <div class="sound-chip" id="soundChip" aria-hidden="true">♪</div>
+    <!-- Panda voice is used on the intro screen only. -->
+    <audio id="pandaAudio" preload="auto" playsinline>
+      <source src="assets/audio/panda_voice.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Background music runs after the intro and pauses for the finale. -->
+    <audio id="backgroundMusic" preload="auto" loop>
+      <source src="assets/audio/Background.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- The uploaded song is used only on the final birthday page. -->
+    <audio id="finalPageMusic" preload="auto" loop>
+      <source src="assets/audio/final-page-song.mp3" type="audio/mpeg" />
+    </audio>
+  </main>
+
+  <script src="script.js?v=20261101-panda-sync"></script>
+</body>
+</html>
